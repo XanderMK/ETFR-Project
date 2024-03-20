@@ -6,7 +6,6 @@ using TMPro;
 public class ETFRManager : MonoBehaviour
 {
     [SerializeField] private Transform leftEye, rightEye;
-    [SerializeField] private LineRenderer lineRenderer;
     public Vector3 GazePoint {
         get {
             return gazePoint;
@@ -35,7 +34,6 @@ public class ETFRManager : MonoBehaviour
 
         Shader.SetGlobalVector("_Gaze_Point", gazePoint);
         Debug.DrawLine(gazePoint, gazePoint + Vector3.up, Color.red);
-        lineRenderer?.SetPositions(new Vector3[] { leftEye.position, gazePoint });
     }
 
 

@@ -8387,8 +8387,8 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -8407,7 +8407,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -9621,7 +9621,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftEye: {fileID: 980596659}
   rightEye: {fileID: 1009085288}
-  lineRenderer: {fileID: 0}
 --- !u!1 &2018389319
 GameObject:
   m_ObjectHideFlags: 0
@@ -10101,6 +10100,59 @@ Transform:
   m_Children: []
   m_Father: {fileID: 249686263}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2135134235
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2135134236}
+  - component: {fileID: 2135134237}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2135134236
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135134235}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2135134237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135134235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0286f55404b2ec640877691940cf7d31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 114844920}
+  targetPrefab: {fileID: 1193387789130693237, guid: 9313a5c8bb709184dbe446b116ed182e, type: 3}
+  targetSpawnDistance: 5
+  targetSpawnVariance: {x: 5, y: 1}
+  targetSpawnOffset: {x: 0, y: 1, z: 0}
+  targetSpawnFrequency: 0.333
+  ballPrefab: {fileID: 0}
+  ballSpawnPosition: {fileID: 0}
+  scoreText: {fileID: 0}
 --- !u!1 &2141653266
 GameObject:
   m_ObjectHideFlags: 0
@@ -10261,6 +10313,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 2008544234}
+  - {fileID: 2135134236}
   - {fileID: 705507995}
   - {fileID: 655449708}
   - {fileID: 1712204280}
