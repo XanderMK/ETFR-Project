@@ -7,6 +7,8 @@ public class ETFRManager : MonoBehaviour
 {
     [SerializeField] private Transform leftEye, rightEye;
     [SerializeField] private OVRManager.FoveatedRenderingLevel etfrLevel;
+    [SerializeField] private bool simulateETFR = false;
+    [SerializeField] private Vector3 simulatedETFRGazePoint;
     public Vector3 GazePoint {
         get {
             return gazePoint;
@@ -31,13 +33,14 @@ public class ETFRManager : MonoBehaviour
         if (OVRManager.GetEyeTrackedFoveatedRenderingSupported())
         {
             OVRManager.SetEyeTrackedFoveatedRenderingEnabled(true);
-            OVRManager.SetFoveatedRenderingLevel(etfrLevel);
         }
+
+        OVRManager.SetFoveatedRenderingLevel(etfrLevel);
     }
 
     void Update()
     {
-        gazePoint = GetGazePoint(leftEye, rightEye);
+        gazePoint = simulateETFR ? simulatedETFRGazePoint : GetGazePoint(leftEye, rightEye);
 
         Shader.SetGlobalVector("_Gaze_Point", gazePoint);
         Debug.DrawLine(gazePoint, gazePoint + Vector3.up, Color.red);
