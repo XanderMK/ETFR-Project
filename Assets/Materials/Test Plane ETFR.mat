@@ -135,7 +135,8 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color_Multiplier: {r: 0.2943663, g: 0.990566, b: 0.39536837, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Texture_Offset: {r: 0, g: 0, b: 0, a: 0}
-    - _Texture_Tiling: {r: 10, g: 10, b: 0, a: 0}
+    - _Texture_Tiling: {r: 50, g: 50, b: 0, a: 0}
   m_BuildTextureStacks: []

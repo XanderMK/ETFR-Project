@@ -6,6 +6,7 @@ using TMPro;
 public class ETFRManager : MonoBehaviour
 {
     [SerializeField] private Transform leftEye, rightEye;
+    [SerializeField] private OVRManager.FoveatedRenderingLevel etfrLevel;
     public Vector3 GazePoint {
         get {
             return gazePoint;
@@ -25,6 +26,12 @@ public class ETFRManager : MonoBehaviour
         else
         {
             Destroy(this);
+        }
+
+        if (OVRManager.GetEyeTrackedFoveatedRenderingSupported())
+        {
+            OVRManager.SetEyeTrackedFoveatedRenderingEnabled(true);
+            OVRManager.SetFoveatedRenderingLevel(etfrLevel);
         }
     }
 
