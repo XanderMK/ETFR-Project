@@ -133,9 +133,9 @@ Material:
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
-    - _Transition_Distance_1: 0.15
-    - _Transition_Distance_2: 0.3
-    - _Transition_Distance_3: 0.5
+    - _Transition_Distance_1: 0.1
+    - _Transition_Distance_2: 0.225
+    - _Transition_Distance_3: 0.325
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:

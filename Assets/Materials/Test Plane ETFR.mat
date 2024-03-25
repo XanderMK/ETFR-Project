@@ -130,7 +130,7 @@ Material:
     - _SrcBlend: 1
     - _Transition_Distance_1: 0.1
     - _Transition_Distance_2: 0.225
-    - _Transition_Distance_3: 0.4
+    - _Transition_Distance_3: 0.325
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:

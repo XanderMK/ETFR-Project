@@ -5,10 +5,11 @@ using TMPro;
 
 public class ETFRManager : MonoBehaviour
 {
+    [SerializeField] private bool useETFRImplementation = true;
     [SerializeField] private Transform leftEye, rightEye;
     [SerializeField] private OVRManager.FoveatedRenderingLevel etfrLevel;
     [SerializeField] private bool simulateETFR = false;
-    [SerializeField] private Vector3 simulatedETFRGazePoint;
+    [SerializeField] private Vector3 simulatedETFRGazePointOffset;
     public Vector3 GazePoint {
         get {
             return gazePoint;
@@ -40,7 +41,9 @@ public class ETFRManager : MonoBehaviour
 
     void Update()
     {
-        gazePoint = simulateETFR ? simulatedETFRGazePoint : GetGazePoint(leftEye, rightEye);
+        if (!useETFRImplementation) return;
+
+        gazePoint = simulateETFR ? leftEye.position + (leftEye.forward * simulatedETFRGazePointOffset.z + leftEye.right * simulatedETFRGazePointOffset.x + leftEye.up * simulatedETFRGazePointOffset.y) : GetGazePoint(leftEye, rightEye);
 
         Shader.SetGlobalVector("_Gaze_Point", gazePoint);
         Debug.DrawLine(gazePoint, gazePoint + Vector3.up, Color.red);
